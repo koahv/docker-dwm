@@ -29,11 +29,11 @@ RUN apk add --no-cache dwm make g++ gcc libx11-dev font-bitstream-type1 sudo ope
 
 #COPY time.sh /usr/bin/time.sh
 
-RUN git clone https://github.com/koahv/dwm-docker.git
+RUN git clone https://github.com/koahv/docker-dwm.git
 
-RUN (cd dwm-docker/dwm; make clean install)
-RUN (cd dwm-docker/session; install -m0755 -D dwm-custom /usr/bin/dwm-custom)
-RUN (cd dwm-docker/config/dmenu-status; install -m0755 -D time /usr/bin/time)
+RUN (cd docker-dwm/dwm; make clean install)
+RUN (cd docker-dwm/session; install -m0755 -D dwm-custom /usr/bin/dwm-custom)
+RUN (cd docker-dwm/config/dmenu-status; install -m0755 -D time /usr/bin/time)
 
 
 
