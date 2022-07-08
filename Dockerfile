@@ -24,15 +24,25 @@
 # Look at x11docker --help for further options.
 
 FROM alpine
-RUN apk add --no-cache dwm make g++ gcc libx11-dev font-bitstream-type1 sudo openvpn git xterm dbus openrc make libxinerama-dev libxft-dev ncurses sed feh geoip bind tini xsetroot
 
-RUN git clone https://github.com/koahv/dwm-docker.git 
+RUN apk add --no-cache dwm make g++ gcc libx11-dev font-bitstream-type1 sudo openvpn git xterm dbus openrc make libxinerama-dev libxft-dev ncurses sed feh geoip bind tini xsetroot feh
+
+#COPY time.sh /usr/bin/time.sh
+
+RUN git clone https://github.com/koahv/dwm-docker.git
+
 RUN (cd dwm-docker/dwm; make clean install)
-
-COPY time.sh /usr/bin/time.sh
-
-ENTRYPOINT ["/tini", "--", "/usr/bin/time.sh"] 
+RUN (cd dwm-docker/session; install -m0755 -D dwm-custom /usr/bin/dwm-custom)
+RUN (cd dwm-docker/config/dmenu-status; install -m0755 -D time /usr/bin/time)
 
 
 
-CMD dwm
+
+
+#COPY time.sh /usr/bin/time.sh
+
+#ENTRYPOINT ["/tini", "--", "/usr/bin/time.sh"] 
+
+
+
+CMD dwm-custom
