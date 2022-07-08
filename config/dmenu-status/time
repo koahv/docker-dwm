@@ -1,0 +1,34 @@
+#!/bin/bash
+
+checkip() {
+	prefix="GeoIP Country Edition: "
+	
+	ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
+
+	loc=$(geoiplookup $ip)
+
+	echo "$loc" | sed -e "s/^$prefix//"
+	
+}
+
+battery="BAT0";
+
+battery_status() {
+    
+    if [ -d /sys/class/power_supply/$battery ]; then
+        
+        charge="$(cat /sys/class/power_supply/$battery/capacity)"
+        echo "$charge% |"
+
+    fi
+}
+
+while true; do
+	
+    xsetroot -name "$(checkip) | $(battery_status) $( date +"%R" )"
+
+	sleep 10s
+
+done
+
+

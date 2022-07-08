@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Register with gnome-session so that it does not kill the whole session thinking it is dead.
+test -n "$DESKTOP_AUTOSTART_ID" && {
+	dbus-send --print-reply --session --dest=org.gnome.SessionManager "/org/gnome/SessionManager" org.gnome.SessionManager.RegisterClient "string:dwm-gnome" "string:$DESKTOP_AUTOSTART_ID"
+}
+
+
+
+sh /home/z0/time &
+feh --bg-max -Z /home/z0/M2020G2.jpg &
+
+
+dwm
+
+test -n "$DESKTOP_AUTOSTART_ID" && {
+dbus-send --print-reply --session --dest=org.gnome.SessionManager "/org/gnome/SessionManager" org.gnome.SessionManager.Logout "uint32:1"
+}
+
