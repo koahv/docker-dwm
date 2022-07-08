@@ -28,6 +28,7 @@ alpine with dwm and openvpn container
 * create file "pass" and edit to contain vpn client user and password
     
     `vpnuser`
+
     `vpnpassword`
 
 * start openvpn-client
