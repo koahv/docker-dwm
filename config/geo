@@ -1,0 +1,12 @@
+#!/bin/bash
+
+checkip () {
+	
+	ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
+	echo Public IP address is $ip 
+
+	loc=$(geoiplookup $ip)
+	echo $loc
+}
+
+checkip
