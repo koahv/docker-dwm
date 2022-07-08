@@ -36,6 +36,7 @@ RUN (cd docker-dwm/session; install -m0755 -D dwm-custom /usr/bin/dwm-custom)
 RUN (cd docker-dwm/config/dmenu-status; install -m0755 -D time /usr/bin/time)
 RUN (cd docker-dwm/config/; install -m0755 -D geo /usr/bin/geo;)
 
+RUN (cd docker-dwm/config/bg/; install -m0755 -D alpinelinux-logo_bg.png /usr/local/share/docker-dwm/bg.png;)
 
 
 #COPY time.sh /usr/bin/time.sh

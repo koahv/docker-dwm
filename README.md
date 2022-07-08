@@ -5,7 +5,8 @@ alpine with dwm and openvpn container
 ## Requirements
 
 * [https://github.com/mviereck/x11docker](x11docker) with image x11docker/xserver built
-    `x11docker --build x11docker/xserver`
+   
+   `x11docker --build x11docker/xserver`
 
 ## Instalation
 
@@ -33,7 +34,7 @@ alpine with dwm and openvpn container
 
 * start openvpn-client
     
-    `sudo docker run -it --cap-add=NET_ADMIN --device /dev/net/tun --name vpn  -v  ~/vpn:/vpn -d 5andr0/openvpn-client:latest`
+    `sudo docker run -it --cap-add=NET_ADMIN --device /dev/net/tun --name vpn  -v  ~/vpn:/vpn -d -f 5andr0/openvpn-client:latest`
 
 * start alpine-dwm
     

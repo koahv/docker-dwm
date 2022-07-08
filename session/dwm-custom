@@ -3,7 +3,7 @@
 
 
 sh /usr/bin/time &
-#feh --bg-max -Z /home/z0/M2020G2.jpg &
+feh --bg-max -Z /usr/local/share/docker/dwm/bg.png &
 
 
 dwm
