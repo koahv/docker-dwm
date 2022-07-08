@@ -1,14 +1,8 @@
 #!/bin/bash
 
-checkip() {
-	prefix="GeoIP Country Edition: "
-	
-	ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
-
-	loc=$(geoiplookup $ip)
-
-	echo "$loc" | sed -e "s/^$prefix//"
-	
+checkip () {
+	ipdata=$(curl -s ipinfo.io/$ip)
+    echo $ipdata | jq -r '[.ip, .country, .city] | join(" ")'
 }
 
 battery="BAT0";
