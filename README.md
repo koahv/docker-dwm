@@ -54,3 +54,9 @@ restart vpn container
 
 
 Ctrl+Shift toggles mouse/kb focus
+
+
+
+## Screenshot
+![alt text](https://raw.githubusercontent.com/koahv/docker-dwm/main/docker-dwm-screenshot.png?raw=true)
+
