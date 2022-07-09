@@ -13,7 +13,7 @@ alpine with dwm and openvpn container
 * clone this repository and cd into directory
 * build from Dockerfile
 
-    `sudo docker build -t koahv/alpine_dwm:0.6 ./`
+    `sudo docker build -t koahv/alpine_dwm:0.8 ./`
 
 * clone [5andr0/openvpn-client](https://github.com/5andr0/openvpn-client) and cd into directory
 * build from Dockerfile
@@ -35,11 +35,11 @@ alpine with dwm and openvpn container
 
 * start openvpn-client
     
-    `sudo docker run -it --cap-add=NET_ADMIN --device /dev/net/tun --name vpn  -v  ~/vpn:/vpn -d -f 5andr0/openvpn-client:latest`
+`sudo docker run -it --cap-add=NET_ADMIN --device /dev/net/tun --name vpn -v ~/vpn:/vpn -d  openvpn-client:latest -f ""`
 
 * start alpine-dwm (add -f for fullscreen)
     
-    `sudo x11docker --desktop koahv/alpine_dwm:0.6 --sudouser --dbus --home --share ~/Public --clipboard --xtest -m --net=container:vpn`
+    `sudo x11docker --desktop koahv/alpine_dwm:0.8 --sudouser --dbus --home --share ~/Public --clipboard --xtest -m --net=container:vpn`
 
 ## Troubleshooting
 

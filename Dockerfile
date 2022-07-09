@@ -25,16 +25,18 @@
 
 FROM alpine
 
-RUN apk add --no-cache dwm make g++ gcc libx11-dev font-bitstream-type1 sudo openvpn git xterm dbus openrc make libxinerama-dev libxft-dev ncurses sed feh geoip bind tini xsetroot feh jq vim
+RUN apk update && apk upgrade && apk add --no-cache dwm make g++ gcc libx11-dev terminus-font font-bitstream-type1 sudo openvpn git xterm dbus openrc make libxinerama-dev libxft-dev ncurses sed feh bind tini xsetroot feh jq gvim firefox-esr
 
 #COPY time.sh /usr/bin/time.sh
 
 RUN git clone https://github.com/koahv/docker-dwm.git
+RUN git clone https://github.com/koahv/st.git
 
 RUN (cd docker-dwm/dwm; make clean install)
 RUN (cd docker-dwm/session; install -m0755 -D dwm-custom /usr/bin/dwm-custom)
 RUN (cd docker-dwm/config/dmenu-status; install -m0755 -D time /usr/bin/time)
-RUN (cd docker-dwm/config; install -m0755 -D geo /usr/bin/geo;)
+RUN (cd docker-dwm/config; install -m0755 -D geo /usr/bin/geo)
+RUN (cd st; make clean install)
 
 RUN (cd docker-dwm/config/bg; install -m0755 -D alpinelinux-logo_bg.png /usr/local/share/docker-dwm/bg.png;)
 
