@@ -30,7 +30,7 @@ alpine with dwm and openvpn container
 
     ```
     vpnuser
-    vpnpassword
+    vpnpass
     ```
 
 * start openvpn-client
