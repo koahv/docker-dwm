@@ -4,7 +4,7 @@ alpine with dwm and openvpn container
 
 ## Requirements
 
-* [https://github.com/mviereck/x11docker](x11docker) with image x11docker/xserver built
+* [mviereck/x11docker](https://github.com/mviereck/x11docker) with image x11docker/xserver built
    
    `x11docker --build x11docker/xserver`
 
