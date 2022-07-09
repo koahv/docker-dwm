@@ -15,7 +15,7 @@ alpine with dwm and openvpn container
 
     `sudo docker build -t koahv/alpine_dwm:0.6 ./`
 
-* clone [https://github.com/5andr0/openvpn-client](openvpn-client) and cd into directory
+* clone [5andr0/openvpn-client](https://github.com/5andr0/openvpn-client) and cd into directory
 * build from Dockerfile
     
     `sudo docker build -t 5andr0/openvpn-client:latest ./`
