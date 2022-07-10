@@ -25,7 +25,11 @@
 
 FROM alpine
 
-RUN apk update && apk upgrade && apk add --no-cache dwm make g++ gcc libx11-dev terminus-font font-bitstream-type1 sudo openvpn git xterm dbus openrc make libxinerama-dev libxft-dev ncurses sed feh bind tini xsetroot feh jq gvim firefox-esr
+#ENV http_proxy http://127.0.0.1:8118
+#ENV https_proxy https://127.0.0.1:8118
+
+
+RUN apk update && apk upgrade && apk add --no-cache dwm make g++ gcc libx11-dev terminus-font font-bitstream-type1 sudo openvpn tor git xterm dbus openrc make libxinerama-dev libxft-dev ncurses sed feh bind tini xsetroot feh jq gvim firefox-esr
 
 #COPY time.sh /usr/bin/time.sh
 
