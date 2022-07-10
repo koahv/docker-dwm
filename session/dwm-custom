@@ -4,7 +4,7 @@
 
 sh /usr/bin/time &
 feh --bg-max -Z /usr/local/share/docker-dwm/bg.png &
-tor
+tor &
 
 dwm
 
