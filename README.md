@@ -8,7 +8,7 @@ alpine with dwm and openvpn container
    
    `x11docker --build x11docker/xserver`
 
-## Instalation
+## Installation
 
 * clone this repository and cd into directory
 * build from Dockerfile
