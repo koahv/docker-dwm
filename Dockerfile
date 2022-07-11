@@ -29,7 +29,7 @@ FROM alpine
 #ENV https_proxy https://127.0.0.1:8118
 
 
-RUN apk update && apk upgrade && apk add --no-cache dwm make g++ gcc libx11-dev terminus-font font-bitstream-type1 sudo openvpn tor git xterm dbus openrc make libxinerama-dev libxft-dev ncurses sed feh bind tini xsetroot feh jq gvim firefox-esr
+RUN apk update && apk upgrade && apk add --no-cache dwm make g++ gcc libx11-dev terminus-font font-bitstream-type1 sudo openvpn git xterm dbus openrc make libxinerama-dev libxft-dev ncurses sed feh bind tini xsetroot feh jq gvim firefox-esr
 
 #COPY time.sh /usr/bin/time.sh
 
@@ -44,8 +44,6 @@ RUN (cd st; make clean install)
 
 RUN (cd docker-dwm/config/bg; install -m0755 -D alpinelinux-logo_bg.png /usr/local/share/docker-dwm/bg.png;)
 
-
-#COPY time.sh /usr/bin/time.sh
 
 #ENTRYPOINT ["/tini", "--", "/usr/bin/time.sh"] 
 
