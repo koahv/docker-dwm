@@ -35,7 +35,7 @@ alpine with dwm and openvpn container
 
 * start openvpn-client
 
-    `sudo docker run -it --cap-add=NET_ADMIN --device /dev/net/tun --name vpn -v ~/vpn:/vpn -d  openvpn-client:latest -f ""`
+    `sudo docker run -it --cap-add=NET_ADMIN --device /dev/net/tun --name vpn -v ~/vpn:/vpn -d  5andr0/openvpn-client:latest -f ""`
 
 * start alpine-dwm (add -f for fullscreen)
 
