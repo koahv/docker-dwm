@@ -2,7 +2,7 @@
 
 checkip () {
 	ipdata=$(curl -s ipinfo.io/$ip)
-    echo $ipdata | jq -r '[.country, .city] | join(" ")'
+    echo $ipdata | jq -r '[.ip, .country, .city] | join(" ")'
 }
 
 battery="BAT0";
